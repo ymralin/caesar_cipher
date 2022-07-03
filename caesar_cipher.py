@@ -46,5 +46,19 @@ def start():
         out = decode(msg, shift_num)
         print(f"Decoded message: {out}")
 
+restart=True
 
-start()
+while restart:
+    start()
+    if_restart=input("Do you want to continue?")
+    restart_check=""
+    while restart_check=="":
+        if if_restart.lower()=="y" or if_restart.lower()=="yes":
+            restart = True
+            restart_check = 1
+        elif if_restart.lower()=="n" or if_restart.lower()=="no":
+            restart = False
+            restart_check = 1
+    if restart == True:
+        start()
+
